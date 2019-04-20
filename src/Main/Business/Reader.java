@@ -8,17 +8,30 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
 
-public class Reader {
+public class Reader  {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public Reader() {};
+	
+	
+	String where="";
+		
+
+	public void setWhere(String where) {
+		this.where = where;
+	}
+	
+	public void runMe(String overload)
+	{
+		setWhere(overload);
+		runMe();
+	}
 
 	
+	public void runMe() {
+		
 		try {
-	        //laptop
-			String where = "C:\\\\Users\\\\fa285\\\\OneDrive\\\\examen 2020\\\\FS19_SX_IT\\\\modDesc.xml";
-	        //pc
-			where = "C:\\Users\\Jorn\\OneDrive\\examen 2020\\FS19_SX_IT\\modDesc.xml";
+		       
+			
 			
 			File inputFile = new File(where);
 	        
@@ -98,13 +111,20 @@ public class Reader {
 		         if (element.hasAttributes()) {
 		        	 System.out.print("\tattributes : ");		         
 		         System.out.println("supported:" + element.getAttribute( "supported"));
-		         
-		         
+		         }}}}
 		         }
-		         
-		      }
-		   }
-		}
-	}
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+		Reader reader = new Reader();
 
+	reader.runMe();
+	
+		
+		
+
+}
 }
